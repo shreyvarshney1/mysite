@@ -9,6 +9,14 @@ export const validateString = (
   return true;
 };
 
+export const validateEmail = (value: unknown): value is string => {
+  if (typeof value !== "string" || !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value)) {
+    return false;
+  }
+
+  return true;
+};
+
 export const getErrorMessage = (error: unknown): string => {
   let message: string;
 
