@@ -1,11 +1,11 @@
-"use client";
+"use server";
 
 import React from "react";
 import { Resend } from "resend";
 import { validateString, getErrorMessage, validateEmail } from "@/lib/utils";
 import ContactFormEmail from "@/email/contact-form-email";
 
-// const token = process.env.PIPEDREAM_API_KEY;
+const token = process.env.PIPEDREAM_API_KEY;
 
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("email");
@@ -30,7 +30,7 @@ export const sendEmail = async (formData: FormData) => {
     message: formData.get("message"),
   }
   try{
-  fetch(`https://eopj2alhn8fc6au.m.pipedream.net`, {
+  fetch(`https://${token}.m.pipedream.net`, {
             method: 'POST',
             body: JSON.stringify(response),
             headers: {
