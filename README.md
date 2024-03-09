@@ -17,5 +17,5 @@
 
 ## Learning
 
-I want to be a professional developer, you can check my [LeetCode Profile](https://leetcode.com/shreyvarshney1) and [GeeksForGeeks Profile](https://auth.geeksforgeeks.org/user/shreyvarshney1) courses.
+I want to be a professional developer, you can check my [LeetCode Profile](https://leetcode.com/shreyvarshney1) and [GeeksForGeeks Profile](https://auth.geeksforgeeks.org/user/shreyvarshney1)
 
