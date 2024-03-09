@@ -1,6 +1,6 @@
 <!-- [![Watch tutorial here](https://img.youtube.com/vi/sUKptmUVIBM/0.jpg)](https://youtu.be/sUKptmUVIBM) -->
 
-# [Live Here!](https://shreyvarshney1.pages.dev/)
+# [Live Here!](https://shreyvarshney.pages.dev/)
 
 ## My Personal Site
 
