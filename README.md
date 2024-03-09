@@ -1,30 +1,21 @@
-[![Watch tutorial here](https://img.youtube.com/vi/sUKptmUVIBM/0.jpg)](https://youtu.be/sUKptmUVIBM)
+<!-- [![Watch tutorial here](https://img.youtube.com/vi/sUKptmUVIBM/0.jpg)](https://youtu.be/sUKptmUVIBM) -->
 
-# [Watch video here](https://youtu.be/sUKptmUVIBM)
+# [Live Here!]
 
-## What you will learn
+## My Personal Site
 
-- Latest Next.js 13 features
-- Next.js App Router
-- Next.js Server Actions
-- Client & Server Components
-- TypeScript (Beginner & Intermediate)
-- Tailwind CSS
-- Context API
-- Advanced Animations with Framer Motion
-- React.Email & Resend
-- Custom React hooks
-- Fresh, modern UI design
-- Light & Dark mode
-- Responsive website
+- Name: Shrey Varshney
+- Software Developer
+- Full-Stack Developer
+- Programmer
+- Coder
+- His Stack includes NextJS, ReactJS, NodeJS, MongoDB, etc.
+- Knows TypeScript (Beginner & Intermediate)
+- Knows Tailwind CSS
+- Develops Softwares in C++ and Python
+- Develops Responsive website
 
-## Important
+## Learning
 
-If you want to be a professional developer, you have to know the fundamentals like JavaScript and CSS really well. I highly recommend you go through my [Professional JavaScript](https://bytegrad.com/courses/professional-javascript) and [Professional CSS](https://bytegrad.com/courses/professional-css) courses.
+I want to be a professional developer, you can check my [LeetCode Profile](https://leetcode.com/shreyvarshney1) and [GeeksForGeeks Profile](https://auth.geeksforgeeks.org/user/shreyvarshney1) courses.
 
-I'm close to releasing a complete React & Next.js course. Get on the email list to receive early-bird pricing: [link](https://email.bytegrad.com/).
-
-## Setup
-
-1. Add RESEND_API_KEY environment variable in .env.local
-2. In the send-email.ts action file, change the "to" email to your own email
