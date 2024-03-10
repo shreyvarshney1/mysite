@@ -1,40 +1,16 @@
 "use client";
 
 import React from "react";
-import { FormEvent } from 'react';
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import { BsInstagram } from "react-icons/bs";
+import { sendResponse } from "@/actions/sendResponses";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
- 
-    const formData = new FormData(event.currentTarget);
-    const response = await fetch('/api/submit', {
-      method: 'POST',
-      body: JSON.stringify({
-        name: formData.get('name'),
-        email: formData.get('email'),
-        subject: formData.get('subject'),
-        message: formData.get('message'),
-      }),
-    });
- 
-    // Handle response if necessary
-    const data = await response.json();
-    if (data.error) {
-      toast.error(data.error);
-      return;
-    }
-    toast.success("Email sent successfully!");
-  }
- 
-
   return (
     <motion.section
       id="contact"
@@ -63,19 +39,15 @@ export default function Contact() {
       </p>
       <form
         className="mt-10 flex flex-col dark:text-black"
-        onSubmit={onSubmit}
-        // action={async (formData) => {
-        //   const { data, error } = await addRow(formData);
+        action={async (formData) => {
+          const {statusText,status} = await sendResponse(formData);
 
-          // if (error) {
-
-
-          //   toast.error(error);
-          //   return;
-          // }
-
-          // toast.success("Email sent successfully!");
-        // }}
+          if (status!=200) {
+            toast.error(String(statusText));
+            return;
+          }
+          else toast.success(statusText);
+        }}
       >
         <input
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
