@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 import { addRow } from '@/actions/authSheets';
 import { validateEmail, validateString } from '@/lib/utils';
