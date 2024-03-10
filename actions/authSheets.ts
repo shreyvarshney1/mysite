@@ -64,20 +64,12 @@ export async function addRow(formData: FormData) {
           "values": [
             // Row 1
             [
-              // Column 1
               formData.get("name"),
-
-              // Column 2
               formData.get("email"),
-
-              // Column 3
               formData.get("subject"),
-
-              // Column 4
               formData.get("message"),
-
-              // Column 5
-              new Date().toISOString(),
+              new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear(),
+              new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
             ],
           ],
         }),
