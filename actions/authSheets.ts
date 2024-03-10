@@ -33,22 +33,14 @@ async function getGoogleSheetsAccessToken() {
   ).then((response) => response.json());
   return access_token;
 }
-export async function addRow(formData: FormData) {
+interface payload {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+export async function addRow(payload: payload) {
   const accessToken = await getGoogleSheetsAccessToken();
-  const name = formData.get("name");
-  const senderEmail = formData.get("email");
-  const subject = formData.get("subject");
-  const message = formData.get("message");
-  if (!validateEmail(senderEmail)) {
-    return {
-      error: "Invalid Email Address",
-    };
-  }
-  if (!validateString(message, 5000) && !validateString(name, 500) && !validateString(subject, 500)){
-    return {
-      error: "Invalid Input",
-    };
-  }
   try {
     await fetch(
       `https://sheets.googleapis.com/v4/spreadsheets/${envVariables.GOOGLE_SHEETS_SUBSCRIBERS_ID}/values/${envVariables.GOOGLE_SHEETS_SUBSCRIBERS_PAGE}:append?valueInputOption=USER_ENTERED`,
@@ -64,10 +56,10 @@ export async function addRow(formData: FormData) {
           "values": [
             // Row 1
             [
-              formData.get("name"),
-              formData.get("email"),
-              formData.get("subject"),
-              formData.get("message"),
+              payload.name,
+              payload.email,
+              payload.subject,
+              payload.message,
               new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear(),
               new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
             ],
