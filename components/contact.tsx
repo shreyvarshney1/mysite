@@ -79,10 +79,11 @@ export default function Contact() {
         <div className="flex flex-row justify-between">
           <SubmitBtn />
           <a
-            className="flex items-center justify-center gap-2 h-[3rem] w-[3rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
+            className="flex items-center justify-center gap-2 h-[3rem] w-[16rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
             href="https://instagram.com/shreyvarshney1"
             target="_blank"
           >
+            Follow me on Instagram
             <BsInstagram />
           </a>
         </div>
