@@ -4,15 +4,13 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import { BsInstagram } from "react-icons/bs";
-import { addRow } from "@/actions/authSheets";
+import { sendResponse } from "@/actions/sendResponses";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
-
   return (
     <motion.section
       id="contact"
@@ -42,14 +40,9 @@ export default function Contact() {
       <form
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success("Email sent successfully!");
+          const response = await sendResponse(formData);
+          if (response.status!=200) toast.error(response.error); 
+          else toast.success("Success! Your Message has been recorded. I will get back to you soon.");
         }}
       >
         <input

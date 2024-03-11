@@ -1,21 +1,14 @@
-export const validateString = (
-  value: unknown,
-  maxLength: number
-): value is string => {
-  if (!value || typeof value !== "string" || value.length > maxLength) {
-    return false;
-  }
-
-  return true;
+export const validateString = (value: unknown): value is string => {
+  return (Boolean(Number(value)) || ((value == "true") || (value == "false")));
 };
 
 export const validateEmail = (value: unknown): value is string => {
-  if (typeof value !== "string" || !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value)) {
-    return false;
-  }
-
-  return true;
+  // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return typeof value === "string" && emailRegex.test(value);
 };
+
 
 export const getErrorMessage = (error: unknown): string => {
   let message: string;
