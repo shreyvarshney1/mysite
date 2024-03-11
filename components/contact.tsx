@@ -40,13 +40,9 @@ export default function Contact() {
       <form
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
-          const {statusText,status} = await sendResponse(formData);
-
-          if (status!=200) {
-            toast.error(String(statusText));
-            return;
-          }
-          else toast.success(statusText);
+          const response = await sendResponse(formData);
+          if (response.status!=200) toast.error(response.error); 
+          else toast.success("Success! Your Message has been recorded. I will get back to you soon.");
         }}
       >
         <input

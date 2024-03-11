@@ -8,19 +8,31 @@ export const sendResponse = async (formData: FormData) => {
   if (!validateEmail(senderEmail)) {
     return {
       error: "Invalid Email Address",
+      status: 400
+    };
+  }
+  if (validateString(name)) {
+    return {
+      error: "Invalid Name",
+      status: 400
+    };
+  }
+  if (validateString(subject)) {
+    return {
+      error: "Invalid Subject",
+      status: 400
     };
   }
   if (
-    !validateString(message, 500) &&
-    !validateString(name, 20) &&
-    !validateString(subject, 50)
-  ) {
+    validateString(message)
+  ){
     return {
-      error: "Invalid Input OR Input too long",
+      error: "Invalid Input",
+      status: 400
     };
   }
   try {
-    const {statusText,status} = await fetch(
+    const response = await fetch(
       "https://googlesheetsapi.shreyvarshney1.workers.dev/post",
       {
         method: "POST",
@@ -32,11 +44,16 @@ export const sendResponse = async (formData: FormData) => {
         }),
       }
     );
-    console.log(statusText,status);
-    return {statusText,status};
+    return {
+      error: null,
+      success: true,
+      ok: true,
+      status: response.status
+    };
   } catch (error: unknown) {
     return {
       error: getErrorMessage(error),
+      status: 500
     };
   }
 };

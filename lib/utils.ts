@@ -1,8 +1,5 @@
-export const validateString = (
-  value: unknown,
-  maxLength: number
-): value is string => {
-  return typeof value === "string" && value.length <= maxLength;
+export const validateString = (value: unknown): value is string => {
+  return (Boolean(Number(value)) || ((value == "true") || (value == "false")));
 };
 
 export const validateEmail = (value: unknown): value is string => {
