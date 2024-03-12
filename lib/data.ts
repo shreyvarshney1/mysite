@@ -24,7 +24,7 @@ export const links = [
     hash: "#skills",
   },
   {
-    name: "Experience",
+    name: "Education",
     hash: "#experience",
   },
   {
@@ -64,9 +64,10 @@ export const projectsData = [
   {
     title: "SheetSync Cloud",
     description:
-      "This project integrates Cloudflare Workers and Google Sheets API for authenticated automated nsertion, by creating a JWT token via a service account's RSA key.",
+      "This project integrates Cloudflare Workers and Google Sheets API for authenticated automated insertion, by creating a JWT token via a service account's RSA key.",
     tags: ["Wrangler", "Google API", "Cloudflare Workers", "Javascript"],
     imageUrl: sheetsyncImg,
+    link: "https://github.com/shreyvarshney1/googlesheets-api",
   },
 ] as const;
 
