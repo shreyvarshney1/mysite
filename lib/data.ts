@@ -67,7 +67,7 @@ export const projectsData = [
       "This project integrates Cloudflare Workers and Google Sheets API for authenticated automated insertion, by creating a JWT token via a service account's RSA key.",
     tags: ["Wrangler", "Google API", "Cloudflare Workers", "Javascript"],
     imageUrl: sheetsyncImg,
-    link: "https://github.com/shreyvarshney1/googlesheets-api",
+    link: "https://github.com/shreyvarshney1/sheetsync-cloud",
   },
 ] as const;
 
