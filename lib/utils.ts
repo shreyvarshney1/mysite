@@ -1,5 +1,5 @@
 export const validateString = (value: unknown): value is string => {
-  return (Boolean(Number(value)) || ((value == "true") || (value == "false")) || (String(value).charAt(0) === "="));
+  return (Boolean(Number(value)) || ((value === "true") || (value === "false")) || (String(value).charAt(0) === "=") || (String(value).charAt(0) === "+"));
 };
 
 export const validateEmail = (value: unknown): value is string => {
