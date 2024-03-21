@@ -9,14 +9,14 @@ import toast from "react-hot-toast";
 import { BsInstagram } from "react-icons/bs";
 import { sendResponse } from "@/actions/sendResponses";
 
-export default function Contact() {
+export default function Contact({noscript}: {noscript?: boolean}) {
   const { ref } = useSectionInView("Contact");
   return (
     <motion.section
       id="contact"
       ref={ref}
       className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{
+      initial={noscript?false:{
         opacity: 0,
       }}
       whileInView={{

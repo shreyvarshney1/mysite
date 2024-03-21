@@ -11,7 +11,7 @@ import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
 
-export default function Experience() {
+export default function Experience({noscript}: {noscript?: boolean}) {
   const { ref } = useSectionInView("Education");
   const { theme } = useTheme();
 

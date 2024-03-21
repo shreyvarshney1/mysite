@@ -20,7 +20,7 @@ const fadeInAnimationVariants = {
   }),
 };
 
-export default function Skills() {
+export default function Skills({noscript}: {noscript?: boolean}) {
   const { ref } = useSectionInView("Skills");
 
   return (
@@ -36,7 +36,7 @@ export default function Skills() {
             className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
             key={index}
             variants={fadeInAnimationVariants}
-            initial="initial"
+            initial={noscript?false:"initial"}
             whileInView="animate"
             viewport={{
               once: true,
