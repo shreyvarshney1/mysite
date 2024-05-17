@@ -41,16 +41,16 @@ export default function Project({
             {description}
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-4">
-          <Image
-            src={imageUrl}
-            height="1000"
-            width="1000"
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-            alt="thumbnail"
-          />
-        </CardItem>
-          <CardItem className="mt-4">
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+            <Image
+              src={imageUrl}
+              height="1000"
+              width="1000"
+              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+              alt="thumbnail"
+            />
+          </CardItem>
+          <CardItem translateZ="80" className="mt-4">
+            <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
               {tags.map((tag, index) => (
                 <li
                   className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
